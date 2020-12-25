@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Coder.h"
+#include "ToLine.h"
 
 int main(int argc, char* argv[]){
     char* cipher = argv[1];

@@ -1,5 +1,5 @@
 SOURCES = mainEncoder.c
-FORLIBRARY = Coder.o
+FORLIBRARY = Coder.o ToLine.o
 LIBRARY = libString.a
 TARGET = encoder
 
@@ -12,9 +12,12 @@ mainEncoder.o: mainEncoder.c
 	gcc $< -c -o $@ -std=c99
 
 $(LIBRARY): $(FORLIBRARY)
-	ar cr $(LIBRARY) Coder.o
+	ar cr $(LIBRARY) Coder.o ToLine.o
 
 Coder.o: Coder.c
+	gcc $< -c -o $@ -std=c99
+
+ToLine.o: ToLine.c
 	gcc $< -c -o $@ -std=c99
 
 clean:
